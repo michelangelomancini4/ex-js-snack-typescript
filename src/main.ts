@@ -56,7 +56,12 @@ type ProjectManager = Dipendente & {
   stakeholderPrincipali: string[] | null
 }
 
-
+type Team = {
+  nome: string,
+  progettoAttuale: string | null,
+  budget: number,
+  membri: [ProjectManager, ...Developer[]]
+}
 
 // 🎯 BONUS
 // Definiamo un nuovo type alias Team, che rappresenta un gruppo di lavoro all'interno dell'azienda:
