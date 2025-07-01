@@ -43,8 +43,26 @@ type Dipendente = {
   contratto: 'indeterminato' | 'determinato' | 'freelance'
 }
 
-// 🎯 BONUS
-// Il type alias Dipendente, ha anche i seguenti dati:
+type Developer = Dipendente & {
+  livelloEsperienza: 'Junior' | 'Mid' | 'Senior',
+  linguaggi?: string[],
+  certificazioni: string[]
+}
 
-// emailAziendale → Email assegnata al dipendente (non si può modificare)
-// contratto → Specifica il tipo di contratto del dipendente, con valori limitati a “indeterminato”, “determinato” o “freelance”.
+type ProjectManager = Dipendente & {
+
+  teamSize: number | null,
+  budgetGestito?: number,
+  stakeholderPrincipali: string[] | null
+}
+
+
+
+// 🎯 BONUS
+// Definiamo un nuovo type alias Team, che rappresenta un gruppo di lavoro all'interno dell'azienda:
+
+// nome → Nome del team (stringa).
+// progettoAttuale → Nome del progetto su cui lavora il team (può essere null se il team è in attesa di assegnazione).
+// budget → Importo numerico del budget assegnato al team (sempre presente).
+// membri → Una tuple in cui il primo elemento è sempre un Project Manager, seguito da uno o più Developers (
+// almeno un developer obbligatorio).
