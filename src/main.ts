@@ -12,9 +12,15 @@ else if (typeof apiData === 'boolean') {
 
   console.log(apiData ? 'si' : 'no');
 }
+else if (apiData === null) {
+  console.log("Il dato è vuoto");
+}
+else if (Array.isArray(apiData)) {
+  console.log(apiData.length);
+
+}
 else {
   console.log('Tipo non supportato');
-
 
 }
 
